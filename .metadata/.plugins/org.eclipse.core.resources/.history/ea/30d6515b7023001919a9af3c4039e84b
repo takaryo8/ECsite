@@ -1,0 +1,121 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+	<meta http-equiv="imagetoolbar" content="no"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<title>Admin画面</title>
+
+	<style type="text/css">
+	/* ========TAG LAYOUT======== */
+		body {
+			margin: 0;
+			padding: 0;
+			line-height: 1.6;
+			letter-spacing: 1px;
+			font-family: Verdana, Helvetica, sans-serif;
+			font-size: 15px;
+			color: #333;
+			background: #fff;
+		}
+	/* ========ID LAYOUT======== */
+		#top {
+			width: 780px;
+			margin: 30px auto;
+			border: 1px solid #333;
+		}
+
+		#header {
+			width: 100%;
+			height: 80px;
+			background-color: black;
+		}
+
+		#main {
+			width: 100%;
+			height: 500px;
+			text-align: center;
+		}
+
+		#admin-menu {
+			margin-left: 300px;
+		}
+
+		#box {
+			width: 20%;
+			padding-bottom: 15px;
+			margin: 0 15px;
+			border: solid 1px #333;
+			float: left;
+		}
+
+		#button-wrapper {
+			margin: 3px auto;
+		}
+
+		#goHome {
+			clear: both;
+		}
+
+		#footer {
+			width: 100%;
+			height: 80px;
+			background-color: black;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="pr">
+		</div>
+	</div>
+	<div id="main">
+		<div id="top">
+			<p>管理者画面</p>
+		</div>
+		<div id="admin-menu">
+			<div id="box">
+				<h2>商品</h2>
+				<s:form action="ItemCreateAction">
+					<div id="button-wrapper">
+						<input type="submit" value="新規登録"/>
+					</div>
+				</s:form>
+				<s:form action="ItemListAction">
+					<div id="button-wrapper">
+						<input type="submit" value="一覧"/>
+					</div>
+				</s:form>
+			</div>
+			<div id="box">
+				<h2>ユーザー</h2>
+				<s:form action="UserCreateAction">
+					<div id="button-wrapper">
+						<input type="submit" value="新規登録"/>
+					</div>
+				</s:form>
+				<s:form action="UserListAction">
+					<div id="button-wrapper">
+						<input type="submit" value="一覧"/>
+					</div>
+				</s:form>
+			</div>
+		</div>
+		<div id="goHome">
+			<span>Home画面に戻る場合は</span>
+			<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="pr">
+		</div>
+	</div>
+</body>
+</html>
